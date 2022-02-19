@@ -4,7 +4,7 @@ Auth class
 """
 
 from typing import List, TypeVar
-from flask import Flask
+from flask import request
 
 class Auth:
     def __init__(self):
