@@ -20,7 +20,18 @@ class Auth:
         """
         to be handled
         """
-        return False
+        if path == None or (len(excluded_paths) == 0 or excluded_paths == None):
+            return True
+        if path[-1] != '/':
+            path += '/'
+        for i in excluded_paths:
+            if i.endswith('*'):
+                if path.startswith(i[:1]):
+                    return True
+        if path in excluded_paths:
+            return False
+        else:
+            return True
 
     def authorization_header(self, request=None) -> str:
         """
