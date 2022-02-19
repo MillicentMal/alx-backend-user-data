@@ -7,7 +7,13 @@ from typing import List, TypeVar
 from flask import request
 
 class Auth:
+    """ 
+    Documenting Auth class
+    """
     def __init__(self):
+        """ 
+        create an auth object
+        """
         return self
 
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
