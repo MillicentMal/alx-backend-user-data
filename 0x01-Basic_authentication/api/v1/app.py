@@ -20,6 +20,10 @@ def not_found(error) -> str:
     """
     return jsonify({"error": "Not found"}), 404
 
+@app.errorhandler(403)
+def forbidden(error) -> str:
+    return jsonify({"error":"Forbidden"}), 403
+
 
 if __name__ == "__main__":
     host = os.getenv("API_HOST" or "0.0.0.0")
