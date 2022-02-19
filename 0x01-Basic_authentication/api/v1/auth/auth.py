@@ -14,7 +14,7 @@ class Auth:
         """ 
         create an auth object
         """
-        return self
+        return None
 
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """
