@@ -16,7 +16,7 @@ def hash_password(password: str) -> bytes:
     return hashed
 
 
-def is_valid(password: str, hashed_password: bytes) -> bool:
+def is_valid(hashed_password: bytes, password: str) -> bool:
     """
   checks if hashed password unhashed is equal to a string password
     """
