@@ -17,8 +17,7 @@ AUTH_TYPE = getenv("AUTH_TYPE")
 if auth:
     from api.v1.auth.auth import Auth
     auth = Auth()
-  
-    
+
 
 @app.errorhandler(404)
 def not_found(error) -> str:
@@ -40,6 +39,7 @@ def forbidden(error) -> str:
     """
     return jsonify({"error": "Forbidden"}), 403
 
+
 @app.before_request
 def before_request() -> str:
     """ method to handler before request """
@@ -54,7 +54,6 @@ def before_request() -> str:
         abort(401)
     if auth.current_user(request) is None:
         abort(403)
-
 
 
 if __name__ == "__main__":
