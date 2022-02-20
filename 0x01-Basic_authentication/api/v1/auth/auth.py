@@ -10,12 +10,6 @@ class Auth:
     """ 
     Documenting Auth class
     """
-    def __init__(self):
-        """ 
-        create an auth object
-        """
-        return None
-
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """
         to be handled
@@ -35,10 +29,10 @@ class Auth:
 
     def authorization_header(self, request=None) -> str:
         """
-      checks for authorization header
+        checks for authorization header
         """
-        if request == None:
-            return 
+        if request is None:
+            return None
         if 'Authorization' not in request.headers:
             return None
         else:
