@@ -20,7 +20,7 @@ def is_valid(password: str, hashed_password: bytes) -> bool:
     """
   checks if hashed password unhashed is equal to a string password
     """
-    if bcrypt.checkpw(password.encode("utf-8"), hashed_password):
+    if bcrypt.checkpw(password.encode(), hashed_password):
         return True
     else:
         return False
